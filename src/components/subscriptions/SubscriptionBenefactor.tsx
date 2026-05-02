@@ -6,45 +6,39 @@ interface SubscriptionProps {
   selectedCurrency: string
 }
 
-export default function SubscriptionPatron(props: SubscriptionProps){
+export default function SubscriptionBenefactor(props: SubscriptionProps){
   const {
     rateCache,
     selectedCurrency
   } = props
   
   return <Subscription 
-    title='Patron'
-    costUSD={2}
+    title='Benefactor'
+    costUSD={5}
     rateCache={rateCache}
     selectedCurrency={selectedCurrency}
     description={<div>
       <div className='mossy-italic'>
-        Patrons help keep the house open.
+        Benefactors help shape the production.
       </div>
       <div className='page-text'>
-        They support the quiet, behind-the-scenes 
-        work that allows MineHaus to exist as a 
-        living world, night after night.
+        They go beyond keeping the house open and help elevate the experience itself through care, refinement, and attention to detail.
       </div>
       <div className='page-text'>
-        By stepping into the role of Patron, you're 
-        helping sustain the ongoing production that 
-        is MineHaus. 
+        By stepping into the role of Benefactor, you help polish what already exists while encouraging new ideas.
       </div>
       <div className='page-text'>
-        Your support keeps the lights 
-        warm, the doors open, and the story moving 
-        forward for everyone who takes part.
+        Your support allows MineHaus to grow thoughtfully, without losing its character.
       </div>
       <div className='mossy-italic'>
-        Keep the lights warm and the curtain rising.
+        Help shape the experience as the show evolves.
       </div>
     </div>}
     includes={<div>
       <ul>
         <li>
           <span className='wine'>
-            A subtle supporter icon
+            A prominent supporter icon
           </span>
           <br/>
           <span className='subscription-includes-text'>
@@ -53,11 +47,17 @@ export default function SubscriptionPatron(props: SubscriptionProps){
         </li>
         <li>
           <span className='wine'>
-            Early access to the 4th <code>/sethome</code> unlock
+            Recognition in the MineHaus Discord
           </span>
-          <br/>
-          <span className='subscription-includes-text'>
-            (Normally earned at 96 hours of playtime)
+        </li>
+        <li>
+          <span className='wine'>
+            Access to the <code>/emote</code> command
+          </span>
+        </li>
+        <li>
+          <span className='wine'>
+            All Patron benefits.
           </span>
         </li>
       </ul>

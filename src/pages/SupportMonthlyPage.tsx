@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import type { ExchangeRateStorage } from '../interfaces/ExchangeRates';
 import SubscriptionPatron from '../components/subscriptions/SubscriptionPatron';
+import SubscriptionBenefactor from '../components/subscriptions/SubscriptionBenefactor';
+import SubscriptionProducer from '../components/subscriptions/SubscriptionProducer';
 
 interface SupportMonthlyProps {
   rateCache: ExchangeRateStorage
@@ -20,6 +22,7 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
     <div className='page-main'>
       <div className='header-1'>
         Why monthly support?
+        <div className='minehaus-hr'></div>
       </div>
       <div className='page-text'>
         MineHaus has ongoing monthly costs, including physical server hardware, 
@@ -41,8 +44,10 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
         * Exchange rates are approximate. Final totals may vary slightly based on your payment provider.
       </div>
       <hr/>
-      <div style={{display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
+      <div style={{justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
         <SubscriptionPatron rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
+        <SubscriptionBenefactor rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
+        <SubscriptionProducer rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
       </div>
     </div>
   </div>

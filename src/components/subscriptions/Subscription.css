@@ -1,0 +1,17 @@
+.subscription {
+  border: solid 1px var(--minehaus-border);
+  border-radius: 7px;
+  padding: 7px;
+  background-color: var(--minehaus-card);
+  max-width: 350px;
+  min-height: 500px;
+}
+
+.subscription-includes {
+  font-size: 0.9em;
+}
+
+.subscription-includes-text {
+  color: var(--minehaus-stone);
+  font-weight: bold;
+}

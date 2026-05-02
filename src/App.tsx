@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import SupportMonthlyPage from './pages/SupportMonthlyPage';
 import SupportOneTimePage from './pages/SupportOneTimePage';
 import CheckoutPage from './pages/CheckoutPage';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import type { ExchangeRateResponse, ExchangeRateStorage } from './interfaces/ExchangeRates';
 import { DateTime } from 'luxon';
@@ -12,7 +12,6 @@ import CurrencySelection from './components/CurrencySelection';
 
 export default function App() {
   const [currency, setCurrency] = useState('USD')
-  const [cart, setCart] = useState(undefined)
   const [rateCache, setRateCache] = useLocalStorage<ExchangeRateStorage>(
     'minehaus-rates',
     {
@@ -23,7 +22,8 @@ export default function App() {
 
   useEffect(() => {
     const load = async function(){
-
+      return //temp since my browser already has some test data. comment out to let it run normally.
+      
       //only update cache if lastRefreshed is empty or if it's been 24 hours since last refresh.
       if(rateCache.lastRefreshed){
         const today = DateTime.utc()

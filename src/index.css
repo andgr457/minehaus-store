@@ -35,6 +35,13 @@ body {
   border-radius: 3px;
 }
 
+.minehaus-hr.gold {
+  background: var(--minehaus-gold);
+  height: 4px;
+  width: 100%;
+  border-radius: 3px;
+}
+
 /* Container to hold the select and custom arrow */
 .select-wrapper {
   position: relative;
@@ -76,16 +83,25 @@ select {
   color: var(--minehaus-lavender);
   font-size: 1.3em;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .header-2 {
   text-align: center;
+  font-size: 1em;
+  color: var(--minehaus-stone);
+}
+
+.header-3 {
+  font-size: 1em;
+  color: var(--minehaus-lavender);
 }
 
 .page-text {
   color: var(--minehaus-stone);
   padding: 5px;
   text-align: center;
+  font-weight: 500;
 }
 
 .foot-note {
@@ -95,10 +111,16 @@ select {
   padding: 3px;
 }
 
-.subscription {
-  border: solid 1px var(--minehaus-border);
-  border-radius: 7px;
-  padding: 7px;
-  background-color: var(--minehaus-card);
-  min-width: 33%;
+.mossy-italic {
+  letter-spacing: 1px;
+  color: var(--minehaus-moss);
+  text-align: center;
+  padding: 3px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.wine {
+  color: var(--minehaus-wine);
+  font-weight: bold;
 }
