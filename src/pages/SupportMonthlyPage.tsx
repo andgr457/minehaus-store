@@ -1,8 +1,12 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import type { ExchangeRateStorage } from '../interfaces/ExchangeRates';
 import SubscriptionPatron from '../components/subscriptions/SubscriptionPatron';
 import SubscriptionBenefactor from '../components/subscriptions/SubscriptionBenefactor';
 import SubscriptionProducer from '../components/subscriptions/SubscriptionProducer';
+import CheckoutModal from '../components/CheckoutModal';
+import { SubscriptionTypes, type Subscription, type SubscriptionType } from '../interfaces/Subscription';
+import { SubscriptionBenefactorDetails, SubscriptionPatronDetails, SubscriptionProducerDetails } from '../constants/Subscriptions';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 interface SupportMonthlyProps {
   rateCache: ExchangeRateStorage
@@ -10,6 +14,10 @@ interface SupportMonthlyProps {
 }
 
 export default function SupportMonthlyPage(props: SupportMonthlyProps){
+  useScrollReveal()
+  const [selectedSubscription, setSelectedSubscription] = useState<Subscription | undefined>(undefined)
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false)
+
   useEffect(() => {
     document.title = "Minehaus Store | Support | Monthly";
     
@@ -18,11 +26,32 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
       document.title = "Minehaus Store";
     };
   }, []);
+
+  const handleSubscriptionClicked = useCallback((subscriptionType: SubscriptionType) => {
+    if(subscriptionType === SubscriptionTypes.Patron){
+      setSelectedSubscription(SubscriptionPatronDetails)
+    } else if(subscriptionType === SubscriptionTypes.Benefactor){
+      setSelectedSubscription(SubscriptionBenefactorDetails)
+    } else if(subscriptionType === SubscriptionTypes.Producer){
+      setSelectedSubscription(SubscriptionProducerDetails)
+    }
+    setShowCheckoutModal(true)
+  }, [])
+
   return <div>
-    <div className='page-main'>
+    <CheckoutModal 
+      rateCache={props.rateCache}
+      selectedCurrency={props.selectedCurrency}
+      subscription={selectedSubscription as Subscription}
+      backdropHides={false}
+      isOpen={showCheckoutModal}
+      onClose={() => {setShowCheckoutModal(false)}}
+      title={`Support as ${selectedSubscription?.type}`}
+      children={null}
+    />
+    <div className='page-main reveal'>
       <div className='header-1'>
         Why monthly support?
-        <div className='minehaus-hr'></div>
       </div>
       <div className='page-text'>
         MineHaus has ongoing monthly costs, including physical server hardware, 
@@ -43,11 +72,17 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
       <div className='foot-note'>
         * Exchange rates are approximate. Final totals may vary slightly based on your payment provider.
       </div>
-      <hr/>
-      <div style={{justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
-        <SubscriptionPatron rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
-        <SubscriptionBenefactor rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
-        <SubscriptionProducer rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
+      <div className='minehaus-hr'></div>
+      <div style={{marginTop: '5px', justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
+        <div onClick={() => {handleSubscriptionClicked(SubscriptionTypes.Patron)}}>
+          <SubscriptionPatron rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
+        </div>
+        <div onClick={() => {handleSubscriptionClicked(SubscriptionTypes.Benefactor)}}>
+          <SubscriptionBenefactor rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
+        </div>
+        <div onClick={() => {handleSubscriptionClicked(SubscriptionTypes.Producer)}}>
+          <SubscriptionProducer rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
+        </div>
       </div>
     </div>
   </div>

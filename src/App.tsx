@@ -3,14 +3,15 @@ import { ConfirmProvider } from './context/ConfirmProvider';
 import HomePage from './pages/HomePage';
 import SupportMonthlyPage from './pages/SupportMonthlyPage';
 import SupportOneTimePage from './pages/SupportOneTimePage';
-import CheckoutPage from './pages/CheckoutPage';
 import { useEffect, useState } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import type { ExchangeRateResponse, ExchangeRateStorage } from './interfaces/ExchangeRates';
 import { DateTime } from 'luxon';
 import CurrencySelection from './components/CurrencySelection';
+import useScrollReveal from './hooks/useScrollReveal';
 
 export default function App() {
+  useScrollReveal()
   const [currency, setCurrency] = useState('USD')
   const [rateCache, setRateCache] = useLocalStorage<ExchangeRateStorage>(
     'minehaus-rates',
@@ -74,12 +75,7 @@ export default function App() {
             />
           </>
         } />
-        <Route path="/checkout" element={
-          <>
-            <CurrencySelection selectedCurrency={currency} onCurrencyChanged={setCurrency} />
-            <CheckoutPage />
-          </>
-        } />
+        
 
         <Route path="*" element={<HomePage />} />
       </Routes>

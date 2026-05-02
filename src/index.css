@@ -2,6 +2,7 @@
   --minehaus-wine: #8B3A3A;
   --minehaus-parchment: #EFE6D8;
   --minehaus-parchment-dark: #ddd5c8;
+  --minehaus-parchment-dark-2: #cec4b4;
   --minehaus-lavender: #9B73BE;
   --minehaus-gold: #DBA443;
   --minehaus-stone: #A29587;
@@ -17,6 +18,11 @@
     var(--minehaus-wine), 
     var(--minehaus-gold),
     var(--minehaus-lavender)
+  );
+  --minehaus-linear-gradient-2: linear-gradient(to right, 
+    var(--minehaus-parchment-dark), 
+    var(--minehaus-parchment),
+    var(--minehaus-parchment-dark)
   );
 }
 
@@ -57,7 +63,7 @@ select {
   padding: 10px;
   border: 1px solid var(--minehaus-border);
   border-radius: 5px;
-  background: var(--minehaus-border);
+  background: var(--minehaus-linear-gradient-2);
   cursor: pointer;
 }
 
@@ -83,7 +89,7 @@ select {
   color: var(--minehaus-lavender);
   font-size: 1.3em;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .header-2 {
@@ -124,3 +130,49 @@ select {
   color: var(--minehaus-wine);
   font-weight: bold;
 }
+
+.purple {
+  color: var(--minehaus-lavender);
+  font-weight: bold;
+}
+
+.gold {
+  color: var(--minehaus-gold);
+  font-weight: bold;
+}
+
+input[type='text'] {
+  font-family: 'Lato';
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid var(--minehaus-border);
+  border-radius: 5px;
+  background: var(--minehaus-parchment);
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid var(--minehaus-border);
+  border-radius: 4px;
+  padding: 5px;
+  background: var(--minehaus-linear-gradient-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  filter: brightness(1.03);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1.5s ease, transform 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+ 

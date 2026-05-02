@@ -27,7 +27,7 @@ export default function SubscriptionPatron(props: SubscriptionProps){
         living world, night after night.
       </div>
       <div className='page-text'>
-        By stepping into the role of Patron, you're 
+        By stepping into the role of <span className='purple'>Patron</span>, you're 
         helping sustain the ongoing production that 
         is MineHaus. 
       </div>

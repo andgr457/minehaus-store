@@ -14,62 +14,44 @@
   overflow-y: auto; /* allows page-style scrolling */
 
   padding-top: 5vh;
-  padding-bottom: 5vh;
 
   z-index: 9999;
 }
 
 .modal-container {
-  background: #1b1b1b;
-  border-radius: 10px;
-  font-size: 1.15em;
+  background: var(--minehaus-wine);
   max-width: 90%;
-  padding: 5px;
-  overscroll-behavior-y: contain;
-  /* remove these */
-  /* max-height: 90%; */
-  /* overflow-y: scroll; */
-
   box-shadow: 0 5px 25px rgba(0,0,0,0.5);
   animation: modalFade .5s ease;
-  letter-spacing: 2px;
-
+  min-width: 50%;
+  border-radius: 5px;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background: #1e2f22;
-  border-radius: 10px 10px 0 0;
-  color: #FFD700;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-shadow:
-  0 0 1px #fff
-  ,0 0 2px #FFD700
-  /* ,0 0 15px #FFD700
-  ,0 0 20px #FFD700
-  ,0 0 25px #FFD700
-  ,0 0 30px #FFD700 */
-  ,0 0 3px #FFD700
-  ;
-  letter-spacing: 3px;
+  background: var(--minehaus-stone);
+  border-radius: 5px 5px 0px 0px;
+  font-size: 1.3em;
+  padding: 7px;
+  margin: 4px 4px 0px 4px;
 }
 
 .modal-close {
   border: none;
   background: transparent;
-  font-size: 1.2rem;
   cursor: pointer;
-  color: white;
+  color: var(--minehaus-wine);
+  font-weight: bold;
+  float: right;
+  margin-right: 12px;
+
+  font-size: 1.3em;
 }
 
 .modal-body {
-  background: #2a2a2a;
-  padding: 1em;
-  border-radius: 0 0 10px 10px;
+  background: var(--minehaus-parchment-dark);
+  padding: 0.5em;
+  border-radius: 0px 0px 5px 5px;
+  margin: 0px 4px 4px 4px;
 }
 
 @keyframes modalFade {

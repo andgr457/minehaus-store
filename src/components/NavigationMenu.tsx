@@ -25,43 +25,41 @@ export default function NavigationMenu() {
         
         {/* Logo & Hamburger Menu*/}
         <div style={{ cursor: 'pointer'}}>
+          
           <div>
             <Link key={`home-link`} to={'/'} className='nav-header'>
-              <img  className='logo' src='images/minehaus-logo.png' />
+              <img className='logo' src={'/images/minehaus-logo.png'} />
             </Link>
           </div>
-          <div style={{float: 'left'}} onClick={() => setIsOpen(!isOpen)} >
-            <Link to='checkout'>
-              <img style={{height: '1.3em', marginTop: '5px'}} src='images/shopping-cart-svgrepo-com.svg' />
-            </Link>
-          </div>
-          <div style={{float: 'right', fontSize: 'larger'}} onClick={() => setIsOpen(!isOpen)} >
-            {isOpen ? "✕" : "☰"}
-          </div>
+          
         </div>
 
-        {/* Desktop Menu */}
-        <div className="desktop-menu" style={{ gap: "24px" }}>
-          {links.map((link) => (
-            <Link key={link.name} to={link.path} style={{  }}>
-              {link.name}
-            </Link>
-          ))}
-        </div>
+      </div>
+      {/* Desktop Menu */}
+      <div style={{cursor: 'pointer', float: 'right', marginRight: '5px', fontSize: 'larger'}} onClick={() => setIsOpen(!isOpen)} >
+        {isOpen ? "✕" : "☰"}
+      </div>
+      <div className={`desktop-menu ${isOpen ? 'closed' : 'open'}`} style={{marginLeft: '10px'}}>
+        {links.map((link) => (
+          <Link key={link.name} to={link.path}>
+            {link.name}
+          </Link>
+        ))}
       </div>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isOpen ? 'open' : 'closed'}`}>
         {links.map((link) => (
-          <Link
-            key={link.name}
-            to={link.path}
-            className='nav-item'
-            style={{ }}
-            onClick={() => setIsOpen(false)}
-          >
-            {link.name}
-          </Link>
+          <div>
+            <Link
+              key={link.name}
+              to={link.path}
+              className='nav-item'
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </Link>
+          </div>
         ))}
       </div>
       

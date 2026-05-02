@@ -25,7 +25,7 @@ export default function SubscriptionProducer(props: SubscriptionProps){
         They don't just support the experience as it exists today, they help refine the script into what it becomes tomorrow.
       </div>
       <div className='page-text'>
-        By stepping into the role of Producer, you help move the world forward with care and long-term perspective.
+        By stepping into the role of <span className='purple'>Producer</span>, you help move the world forward with care and long-term perspective.
       </div>
       <div className='page-text'>
         Your support reflects belief in the vision of MineHaus and where its story is headed.
@@ -65,7 +65,7 @@ export default function SubscriptionProducer(props: SubscriptionProps){
         </li>
         <li>
           <span className='wine'>
-            All Benefactor and Patron benefits.
+            All <span className='purple'>Benefactor</span> and <span className='purple'>Patron</span> benefits.
           </span>
         </li>
       </ul>

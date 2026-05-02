@@ -35,12 +35,14 @@ export default function Subscription(props: SubscriptionProps){
     <div className='subscription-description'>
       {description}
     </div>
-    <div className='minehaus-hr gold' />
-    <div className='subscription-includes'>
-      <div className='header-3'>
-        Includes
+    {includes && <>
+      <div className='minehaus-hr gold' />
+      <div className='subscription-includes'>
+        <div className='purple'>
+          Includes
+        </div>
+        {includes}
       </div>
-      {includes}
-    </div>
+    </>}
   </div>
 }

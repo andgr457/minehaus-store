@@ -25,7 +25,7 @@ export default function SubscriptionBenefactor(props: SubscriptionProps){
         They go beyond keeping the house open and help elevate the experience itself through care, refinement, and attention to detail.
       </div>
       <div className='page-text'>
-        By stepping into the role of Benefactor, you help polish what already exists while encouraging new ideas.
+        By stepping into the role of <span className='purple'>Benefactor</span>, you help polish what already exists while encouraging new ideas.
       </div>
       <div className='page-text'>
         Your support allows MineHaus to grow thoughtfully, without losing its character.
@@ -57,7 +57,7 @@ export default function SubscriptionBenefactor(props: SubscriptionProps){
         </li>
         <li>
           <span className='wine'>
-            All Patron benefits.
+            All <span className='purple'>Patron</span> benefits.
           </span>
         </li>
       </ul>
