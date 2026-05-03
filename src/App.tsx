@@ -1,122 +1,87 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import { ConfirmProvider } from './context/ConfirmProvider';
+import HomePage from './pages/HomePage';
+import SupportMonthlyPage from './pages/SupportMonthlyPage';
+import SupportOneTimePage from './pages/SupportOneTimePage';
+import { useEffect, useState } from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import type { ExchangeRateResponse, ExchangeRateStorage } from './interfaces/ExchangeRates';
+import { DateTime } from 'luxon';
+import CurrencySelection from './components/CurrencySelection';
+import useScrollReveal from './hooks/useScrollReveal';
+import TermsPage from './pages/TermsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  useScrollReveal()
+  const [currency, setCurrency] = useState('USD')
+  const [rateCache, setRateCache] = useLocalStorage<ExchangeRateStorage>(
+    'minehaus-rates',
+    {
+      lastRefreshed: '',
+      rates: {}
+    }
+  )
+
+  useEffect(() => {
+    const load = async function(){
+      // return //temp since my browser already has some test data. comment out to let it run normally.
+      
+      //only update cache if lastRefreshed is empty or if it's been 24 hours since last refresh.
+      if(rateCache.lastRefreshed){
+        const today = DateTime.utc()
+        const lastRefresh = DateTime.fromISO(rateCache.lastRefreshed)
+        const diffHours = Math.abs(today.diff(lastRefresh, 'hours').hours)
+        console.log(diffHours)
+        if(diffHours < 24){
+          console.debug('Rates cache not updated.')
+          return
+        }
+      }
+      //This is temporary development.
+      //TODO: Point to our API
+      const apiKey = import.meta.env.VITE_FX_API_KEY;
+      const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`
+      const res = await fetch(url);
+      const data: ExchangeRateResponse = await res.json();
+  
+      const newRatesCache: ExchangeRateStorage = {
+        lastRefreshed: DateTime.utc().toISO(),
+        rates: data.conversion_rates
+      }
+      setRateCache(newRatesCache)
+      console.debug('Rates updated.', newRatesCache)
+    }
+    load()
+  }, [currency])
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <ConfirmProvider>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/support/monthly" element={
+          <>
+            <CurrencySelection selectedCurrency={currency} onCurrencyChanged={(newCurrency: string) => {setCurrency(newCurrency)}} />
+            <SupportMonthlyPage 
+              rateCache={rateCache} 
+              selectedCurrency={currency}
+            />
+          </>
+        } />
+        <Route path="/support/one-time" element={
+          <>
+            <CurrencySelection selectedCurrency={currency} onCurrencyChanged={setCurrency} />
+            <SupportOneTimePage 
+              rateCache={rateCache} 
+              selectedCurrency={currency}
+            />
+          </>
+        } />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </ConfirmProvider>
+  );
 }
-
-export default App
