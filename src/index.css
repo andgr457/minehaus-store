@@ -1,0 +1,234 @@
+:root{
+  --minehaus-wine: #8B3A3A;
+  --minehaus-wine-opaque: #8b3a3a24;
+  --minehaus-parchment: #EFE6D8;
+  --minehaus-parchment-dark: #ddd5c8;
+  --minehaus-parchment-dark-2: #cec4b4;
+  --minehaus-lavender: #9B73BE;
+  --minehaus-gold: #DBA443;
+  --minehaus-stone: #A29587;
+  --minehaus-moss: #8A9A5B;
+  --minehaus-moss-opaque: #8a9a5b34;
+
+  --minehaus-ink: #2b2b2b;
+  --minehaus-card: rgba(252, 240, 222, 0.92);
+  --minehaus-border: rgba(162,149,135,0.55);
+  --minehaus-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  --minehaus-radius: 14px;
+
+  --minehaus-linear-gradient: linear-gradient(to right, 
+    var(--minehaus-wine), 
+    var(--minehaus-gold),
+    var(--minehaus-lavender)
+  );
+  --minehaus-linear-gradient-2: linear-gradient(to right, 
+    var(--minehaus-parchment-dark), 
+    var(--minehaus-parchment),
+    var(--minehaus-parchment-dark)
+  );
+  --minehaus-linear-gradient-3: linear-gradient(to right, 
+    var(--minehaus-parchment), 
+    var(--minehaus-gold),
+    var(--minehaus-parchment)
+  );
+}
+
+body {
+  color: var(--minehaus-ink);
+  background-color: var(--minehaus-parchment);
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Lato';
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.minehaus-hr {
+  background: var(--minehaus-linear-gradient);
+  height: 4px;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.minehaus-hr.small {
+  width: 225px;
+  margin: 0 auto;
+}
+
+.minehaus-hr.gold {
+  height: 2px;
+  background: var(--minehaus-linear-gradient-3);
+  margin: 0 auto;
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
+/* Container to hold the select and custom arrow */
+.select-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 3px;
+}
+
+select {
+  appearance: none;
+  font-family: 'Lato';
+  font-size: 1em;
+  padding: 10px;
+  width: 350px;
+  text-align: center;
+  border: 1px solid var(--minehaus-border);
+  border-radius: 5px;
+  background: var(--minehaus-linear-gradient-2);
+  cursor: pointer;
+}
+
+.page-main {
+  border: solid 1px var(--minehaus-border);
+  border-radius: 7px;
+  padding: 7px;
+  background-color: var(--minehaus-card);
+  margin-top: 5px;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 3px;
+}
+
+.header-1 {
+  color: var(--minehaus-lavender);
+  font-size: 1.3em;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.header-1.red {
+  color: var(--minehaus-wine);
+}
+
+.header-2 {
+  text-align: center;
+  font-size: 1em;
+  color: var(--minehaus-stone);
+}
+
+.header-3 {
+  font-size: 1em;
+  color: var(--minehaus-lavender);
+}
+
+.page-text {
+  color: var(--minehaus-ink);
+  padding: 5px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.page-text.left {
+  text-align: left;
+}
+
+.page-text.danger {
+  color: var(--minehaus-ink);
+  background-color: var(--minehaus-wine-opaque);
+  margin-top: 3px;
+  border-radius: 10px;
+  border-left: solid 4px var(--minehaus-wine);
+}
+
+.page-text.success {
+  color: var(--minehaus-ink);
+  background-color: var(--minehaus-moss-opaque);
+  margin-top: 3px;
+  border-radius: 10px;
+  border-left: solid 4px var(--minehaus-moss);
+}
+
+.foot-note {
+  font-size: 0.85em;
+  color: var(--minehaus-stone);
+  text-align: center;
+  padding: 3px;
+}
+
+.mossy-italic {
+  letter-spacing: 1px;
+  color: var(--minehaus-moss);
+  text-align: center;
+  padding: 3px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.wine {
+  color: var(--minehaus-wine);
+  font-weight: bold;
+}
+
+.purple {
+  color: var(--minehaus-lavender);
+  font-weight: bold;
+}
+
+.black {
+  color: var(--minehaus-ink);
+  font-weight: bold;
+}
+
+.gold {
+  color: var(--minehaus-gold);
+  font-weight: bold;
+}
+
+.green {
+  color: var(--minehaus-moss);
+  font-weight: bold;
+}
+
+input[type='text'] {
+  font-family: 'Lato';
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid var(--minehaus-border);
+  border-radius: 5px;
+  background: var(--minehaus-parchment);
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid var(--minehaus-border);
+  border-radius: 4px;
+  padding: 7px;
+  background: var(--minehaus-linear-gradient-2);
+  text-transform: uppercase;
+  font-size: smaller;
+  min-width: 100px;
+  text-align: center;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1.5s ease, transform 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-link {
+  all: unset;
+  cursor: pointer;
+}
+ 

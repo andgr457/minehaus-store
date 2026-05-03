@@ -1,0 +1,32 @@
+.subscription {
+  border: solid 1px var(--minehaus-border);
+  border-radius: 7px;
+  padding: 7px;
+  background-color: var(--minehaus-card);
+  max-width: 300px;
+  min-height: 462px;
+  transform: scale(1);
+  filter: brightness(1);
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.subscription:hover {
+  border-color: var(--minehaus-gold);
+  filter: brightness(1.02);
+  transform: scale(1.01);
+  transition: transform 0.2s;
+}
+
+.subscription-includes {
+  font-size: 0.9em;
+}
+
+.subscription-includes-text {
+  color: var(--minehaus-stone);
+  font-weight: bold;
+}
+
+.per-month {
+  font-size: 0.8em;
+}
