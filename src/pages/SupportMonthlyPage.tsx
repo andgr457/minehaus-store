@@ -46,7 +46,7 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
       backdropHides={false}
       isOpen={showCheckoutModal}
       onClose={() => {setShowCheckoutModal(false)}}
-      title={`Support as ${selectedSubscription?.type}`}
+      title={`Support as a ${selectedSubscription?.type}`}
       children={null}
     />
     <div className='page-main reveal'>
@@ -54,18 +54,18 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
         Why monthly support?
         <div className='minehaus-hr small' />
       </div>
-      <div className='page-text'>
+      <div className='page-text dark'>
         MineHaus has ongoing monthly costs, including physical server hardware, 
         data security, plugin development, and infrastructure that keeps the 
         network running smoothly. Monthly support provides the stability needed 
         to cover those fixed costs reliably.
       </div>
-      <div className='page-text'>
+      <div className='page-text dark'>
         It also helps ensure that support comes from players who are actively 
         part of MineHaus. This keeps benefits relevant, fair, and aligned with 
         those who are currently playing and contributing to the community.
       </div>
-      <div className='page-text'>
+      <div className='page-text dark'>
         Beyond fixed costs, monthly support reflects the ongoing responsibility 
         of running a server. MineHaus requires consistent attention, care, and 
         decision-making to remain well-maintained, and enjoyable for everyone.
@@ -73,7 +73,7 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
       <div className='foot-note'>
         * Exchange rates are approximate. Final totals may vary slightly based on your payment provider.
       </div>
-      <div className='minehaus-hr' />
+      <div className='minehaus-hr gold' />
       <div style={{marginTop: '5px', justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
         <div onClick={() => {handleSubscriptionClicked(SubscriptionTypes.Patron)}}>
           <SubscriptionPatron rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />

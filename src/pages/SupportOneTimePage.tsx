@@ -54,7 +54,7 @@ export default function SupportOneTimePage(props: SupportOneTimeProps){
       <div className='foot-note'>
         * Exchange rates are approximate. Final totals may vary slightly based on your payment provider.
       </div>
-      <div className='minehaus-hr'></div>
+      <div className='minehaus-hr gold'></div>
       <div style={{marginTop: '5px', justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
         <div onClick={() => {handleSubscriptionClicked(SubscriptionTypes.OneTime)}}>
           <SubscriptionOneTime rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />

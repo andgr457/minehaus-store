@@ -4,7 +4,7 @@
   padding: 7px;
   background-color: var(--minehaus-card);
   max-width: 300px;
-  min-height: 500px;
+  min-height: 462px;
   transform: scale(1);
   filter: brightness(1);
   transition: transform 0.5s;

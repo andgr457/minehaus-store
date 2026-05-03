@@ -26,6 +26,11 @@
     var(--minehaus-parchment),
     var(--minehaus-parchment-dark)
   );
+  --minehaus-linear-gradient-3: linear-gradient(to right, 
+    var(--minehaus-parchment), 
+    var(--minehaus-gold),
+    var(--minehaus-parchment)
+  );
 }
 
 body {
@@ -34,6 +39,10 @@ body {
   background-position: center;
   background-attachment: fixed;
   font-family: 'Lato';
+}
+
+.main {
+  margin: 0 auto;
 }
 
 .minehaus-hr {
@@ -51,39 +60,32 @@ body {
 }
 
 .minehaus-hr.gold {
-  background: var(--minehaus-gold);
-  height: 4px;
-  width: 100%;
-  border-radius: 3px;
+  height: 2px;
+  background: var(--minehaus-linear-gradient-3);
+  margin: 0 auto;
+  margin-top: 3px;
+  margin-bottom: 6px;
 }
 
 /* Container to hold the select and custom arrow */
 .select-wrapper {
-  position: relative;
-  width: fit-content;
-  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 3px;
 }
 
 select {
   appearance: none;
   font-family: 'Lato';
   font-size: 1em;
-  width: 100%;
   padding: 10px;
+  width: 350px;
+  text-align: center;
   border: 1px solid var(--minehaus-border);
   border-radius: 5px;
   background: var(--minehaus-linear-gradient-2);
   cursor: pointer;
-}
-
-/* Custom Arrow using pseudo-element */
-.select-wrapper::after {
-  content: "▼";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none; /* Allows clicks to pass to select */
 }
 
 .page-main {
@@ -92,6 +94,9 @@ select {
   padding: 7px;
   background-color: var(--minehaus-card);
   margin-top: 5px;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 3px;
 }
 
 .header-1 {
@@ -118,20 +123,18 @@ select {
 }
 
 .page-text {
-  color: var(--minehaus-stone);
+  color: var(--minehaus-ink);
   padding: 5px;
   text-align: center;
-  font-weight: 500;
+  font-size: 0.9em;
 }
 
-.page-text.dark {
-  color: var(--minehaus-ink);
-  font-weight: normal;
+.page-text.left {
+  text-align: left;
 }
 
 .page-text.danger {
   color: var(--minehaus-ink);
-  font-weight: normal;
   background-color: var(--minehaus-wine-opaque);
   margin-top: 3px;
   border-radius: 10px;
@@ -140,7 +143,6 @@ select {
 
 .page-text.success {
   color: var(--minehaus-ink);
-  font-weight: normal;
   background-color: var(--minehaus-moss-opaque);
   margin-top: 3px;
   border-radius: 10px;
@@ -202,14 +204,16 @@ button {
   cursor: pointer;
   border: 1px solid var(--minehaus-border);
   border-radius: 4px;
-  padding: 5px;
+  padding: 7px;
   background: var(--minehaus-linear-gradient-2);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: smaller;
+  min-width: 100px;
+  text-align: center;
 }
 
 button:hover {
-  filter: brightness(1.03);
+  filter: brightness(1.1);
 }
 
 .reveal {
@@ -221,5 +225,10 @@ button:hover {
 .reveal.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.footer-link {
+  all: unset;
+  cursor: pointer;
 }
  

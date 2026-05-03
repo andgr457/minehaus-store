@@ -19,9 +19,6 @@ export default function SubscriptionOneTime(props: SubscriptionProps){
     selectedCurrency={selectedCurrency}
     description={<div>
       <div className='page-text'>
-        One-Time Support exists for those moments when you feel inclined to contribute, without stepping into a recurring role.
-      </div>
-      <div className='page-text'>
         It offers a flexible way to lend support on your own terms, whether as a quiet thank you, a celebration, or simply a gesture of appreciation for the world and community you enjoy.
       </div>
       <div className='page-text'>

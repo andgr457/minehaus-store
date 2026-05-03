@@ -41,7 +41,7 @@ export default function SubscriptionBenefactor(props: SubscriptionProps){
             A prominent supporter icon
           </span>
           <br/>
-          <span className='subscription-includes-text'>
+          <span className='foot-note'>
             displayed by your name in chat and tab
           </span>
         </li>

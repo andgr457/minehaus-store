@@ -9,6 +9,8 @@ import type { ExchangeRateResponse, ExchangeRateStorage } from './interfaces/Exc
 import { DateTime } from 'luxon';
 import CurrencySelection from './components/CurrencySelection';
 import useScrollReveal from './hooks/useScrollReveal';
+import TermsPage from './pages/TermsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 export default function App() {
   useScrollReveal()
@@ -23,7 +25,7 @@ export default function App() {
 
   useEffect(() => {
     const load = async function(){
-      return //temp since my browser already has some test data. comment out to let it run normally.
+      // return //temp since my browser already has some test data. comment out to let it run normally.
       
       //only update cache if lastRefreshed is empty or if it's been 24 hours since last refresh.
       if(rateCache.lastRefreshed){
@@ -75,7 +77,8 @@ export default function App() {
             />
           </>
         } />
-        
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
 
         <Route path="*" element={<HomePage />} />
       </Routes>

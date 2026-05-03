@@ -60,11 +60,17 @@ export default function CheckoutModal(props: CheckoutModalProps){
   >
     <div className='page-main'>
       
-      <div className='foot-note'>
-        Note: Please match your in-game name exactly as they are (CaSe-sensitive).
+      <div className='page-text'>
+        <span className='purple'>Note</span>: Please match your in-game name exactly. It is (CaSe-sensitive).
       </div>
-      <div className='foot-note'>
+      <div className='page-text'>
         Java example: <code>Steve</code> Bedrock example: <code>.Steve</code>
+      </div>
+      <div className='page-text danger'>
+        If the name is entered incorrectly, benefits may go to the wrong account or may not apply at all.
+      </div>
+      <div className='page-text'>
+        Supporting on behalf of someone else? Enter their exact in-game name here.
       </div>
 
       <div className='minehaus-hr'/>

@@ -41,7 +41,7 @@ export default function SubscriptionProducer(props: SubscriptionProps){
             The most prominent supporter icon
           </span>
           <br/>
-          <span className='subscription-includes-text'>
+          <span className='foot-note'>
             displayed by your name in chat and tab
           </span>
         </li>
@@ -50,7 +50,7 @@ export default function SubscriptionProducer(props: SubscriptionProps){
             A seated statue of your player
           </span>
           <br/>
-          <span className='subscription-includes-text'>
+          <span className='foot-note'>
             in the MineHaus Grand Theater
           </span>
         </li>
@@ -59,7 +59,7 @@ export default function SubscriptionProducer(props: SubscriptionProps){
             Access to a private Discord channel
           </span>
           <br/>
-          <span className='subscription-includes-text'>
+          <span className='foot-note'>
             for feedback, discussion, and polls
           </span>
         </li>

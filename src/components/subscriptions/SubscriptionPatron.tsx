@@ -47,7 +47,7 @@ export default function SubscriptionPatron(props: SubscriptionProps){
             A subtle supporter icon
           </span>
           <br/>
-          <span className='subscription-includes-text'>
+          <span className='foot-note'>
             displayed by your name in chat and tab
           </span>
         </li>
@@ -56,7 +56,7 @@ export default function SubscriptionPatron(props: SubscriptionProps){
             Early access to the 4th <code>/sethome</code> unlock
           </span>
           <br/>
-          <span className='subscription-includes-text'>
+          <span className='foot-note'>
             (Normally earned at 96 hours of playtime)
           </span>
         </li>

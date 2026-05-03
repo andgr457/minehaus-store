@@ -17,7 +17,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ✦ Welcome to the MineHaus Store
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text dark'>
         Thank you for considering supporting <span className='wine'>MineHaus</span>. 
@@ -40,7 +40,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ✓ Support, Not Advantage
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text dark'>
         Supporting MineHaus is <span className='green'>completely optional </span> 
@@ -55,7 +55,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ★ Supporter Benefits and Server Health
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text dark'>
         Supporter benefits apply only while your account remains 
@@ -73,7 +73,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ⏱ Purchase Processing
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text dark'>
         Most purchases are processed within a 
@@ -90,7 +90,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ⚠ Final Sales and House Rules
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text danger'>
         All purchases are <span className='wine'>final</span>. Supporter 
@@ -105,7 +105,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ♥ Family Friendly and Permissions
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text dark'>
         MineHaus is and will always be a <span className='green'>family friendly </span> 
@@ -120,7 +120,7 @@ export default function HomePage(){
     <div className='page-main reveal'>
       <div className='header-1 red'>
         ❤ A Note on Care and Responsibility
-        <div className='minehaus-hr small' />
+        <div className='minehaus-hr gold' />
       </div>
       <div className='page-text success'>
         <div className='page-text dark'>
@@ -142,6 +142,6 @@ export default function HomePage(){
         We are grateful to have you here whether you choose to support or simply enjoy the show.
       </div>
     </div>
-    <div className='minehaus-hr' />
+    <div className='minehaus-hr gold' />
   </div>
 }

@@ -4,15 +4,21 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import NavHeader from './components/NavigationMenu';
+import Footer from './components/Footer';
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div >
-        <NavHeader />
-      </div>
-      <div className='app-main'>
-        <App />
+      <div className='main'>
+        <div>
+          <NavHeader />
+        </div>
+        <div className='app-main'>
+          <App />
+        </div>
+        <div>
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   </React.StrictMode>
