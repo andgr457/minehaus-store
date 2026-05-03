@@ -12,14 +12,14 @@ export default function NavigationMenu() {
   }, [location]);
 
   const links = [
-    { name: "Home", path: "/home" },
+    { name: "Home", path: "/" },
     { name: "Monthly Support Tiers", path: "/support/monthly" },
     { name: "One-Time Support", path: "/support/one-time" },
   ];
 
   return (
     <nav className='nav'>
-      <div className='minehaus-hr' style={{marginBottom: '5px'}}></div>
+      <div className='minehaus-hr'></div>
 
       <div className='nav-content'>
         
@@ -62,8 +62,8 @@ export default function NavigationMenu() {
           </div>
         ))}
       </div>
+        <div className='minehaus-hr' ></div>
       
-      <div className='minehaus-hr' style={{marginTop: '5px'}}></div>
     </nav>
   );
 }

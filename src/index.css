@@ -1,5 +1,6 @@
 :root{
   --minehaus-wine: #8B3A3A;
+  --minehaus-wine-opaque: #8b3a3a24;
   --minehaus-parchment: #EFE6D8;
   --minehaus-parchment-dark: #ddd5c8;
   --minehaus-parchment-dark-2: #cec4b4;
@@ -7,6 +8,7 @@
   --minehaus-gold: #DBA443;
   --minehaus-stone: #A29587;
   --minehaus-moss: #8A9A5B;
+  --minehaus-moss-opaque: #8a9a5b34;
 
   --minehaus-ink: #2b2b2b;
   --minehaus-card: rgba(252, 240, 222, 0.92);
@@ -39,6 +41,13 @@ body {
   height: 4px;
   width: 100%;
   border-radius: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.minehaus-hr.small {
+  width: 225px;
+  margin: 0 auto;
 }
 
 .minehaus-hr.gold {
@@ -90,6 +99,11 @@ select {
   font-size: 1.3em;
   text-align: center;
   letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.header-1.red {
+  color: var(--minehaus-wine);
 }
 
 .header-2 {
@@ -108,6 +122,29 @@ select {
   padding: 5px;
   text-align: center;
   font-weight: 500;
+}
+
+.page-text.dark {
+  color: var(--minehaus-ink);
+  font-weight: normal;
+}
+
+.page-text.danger {
+  color: var(--minehaus-ink);
+  font-weight: normal;
+  background-color: var(--minehaus-wine-opaque);
+  margin-top: 3px;
+  border-radius: 10px;
+  border-left: solid 4px var(--minehaus-wine);
+}
+
+.page-text.success {
+  color: var(--minehaus-ink);
+  font-weight: normal;
+  background-color: var(--minehaus-moss-opaque);
+  margin-top: 3px;
+  border-radius: 10px;
+  border-left: solid 4px var(--minehaus-moss);
 }
 
 .foot-note {
@@ -136,8 +173,18 @@ select {
   font-weight: bold;
 }
 
+.black {
+  color: var(--minehaus-ink);
+  font-weight: bold;
+}
+
 .gold {
   color: var(--minehaus-gold);
+  font-weight: bold;
+}
+
+.green {
+  color: var(--minehaus-moss);
   font-weight: bold;
 }
 

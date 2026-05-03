@@ -1,5 +1,6 @@
 import { CURRENCIES } from '../../constants/Currencies'
 import type { ExchangeRateStorage } from '../../interfaces/ExchangeRates'
+import { SubscriptionTypes } from '../../interfaces/Subscription'
 import './Subscription.css'
 
 interface SubscriptionProps {
@@ -30,7 +31,7 @@ export default function Subscription(props: SubscriptionProps){
       {title}
     </div>
     <div className='header-2'>
-      <span className='wine'>{currencyData?.symbol} {rounded}</span> * {currencyData?.code} / month
+      <span className='wine'>{currencyData?.symbol} {rounded}</span> {title !== SubscriptionTypes.OneTime ? <span className='per-month'>/ month</span> : ''}
     </div>
     <div className='subscription-description'>
       {description}

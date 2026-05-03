@@ -46,6 +46,7 @@ export default function SupportOneTimePage(props: SupportOneTimeProps){
     <div className='page-main reveal'>
       <div className='header-1'>
         One-Time Support
+        <div className='minehaus-hr small' />
       </div>
       <div className='page-text'>
         One-Time Support exists for those moments when you feel inclined to contribute, without stepping into a recurring role.

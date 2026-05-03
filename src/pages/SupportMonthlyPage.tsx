@@ -52,10 +52,11 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
     <div className='page-main reveal'>
       <div className='header-1'>
         Why monthly support?
+        <div className='minehaus-hr small' />
       </div>
       <div className='page-text'>
         MineHaus has ongoing monthly costs, including physical server hardware, 
-        data security, plugin development, and infrastructure that keep the 
+        data security, plugin development, and infrastructure that keeps the 
         network running smoothly. Monthly support provides the stability needed 
         to cover those fixed costs reliably.
       </div>
@@ -72,7 +73,7 @@ export default function SupportMonthlyPage(props: SupportMonthlyProps){
       <div className='foot-note'>
         * Exchange rates are approximate. Final totals may vary slightly based on your payment provider.
       </div>
-      <div className='minehaus-hr'></div>
+      <div className='minehaus-hr' />
       <div style={{marginTop: '5px', justifyContent: 'center', display: 'flex', flexWrap: 'wrap', gap: '5px'}}>
         <div onClick={() => {handleSubscriptionClicked(SubscriptionTypes.Patron)}}>
           <SubscriptionPatron rateCache={props.rateCache} selectedCurrency={props.selectedCurrency} />
